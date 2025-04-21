@@ -19,3 +19,5 @@ data_frame['days_since_last_payment'] = (today - data_frame['Last Payment Date']
 data_frame['user_lifetime_days'] = (today - data_frame['Join Date']).dt.days
 
 data_frame['is_churned'] = (data_frame['days_since_last_payment'] > data_frame['plan_duration_days']).astype(int)
+
+data_frame.to_csv(r"data\Netflix_Userbase.csv", index=False)
